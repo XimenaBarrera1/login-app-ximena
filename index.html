@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Login App | Ximena Barrera</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="fondo" aria-hidden="true">
+    <span class="burbuja b1"></span>
+    <span class="burbuja b2"></span>
+    <span class="burbuja b3"></span>
+  </div>
+
+  <main class="contenedor">
+
+    <!-- Vista de inicio de sesión -->
+    <section id="vista-login" class="tarjeta">
+      <div class="logo">🔐</div>
+      <h1>¡Hola de nuevo!</h1>
+      <p class="subtitulo">Inicia sesión para continuar</p>
+
+      <form id="form-login" novalidate>
+        <div class="campo">
+          <input type="text" id="usuario" name="usuario" placeholder=" " autocomplete="username">
+          <label for="usuario">Usuario</label>
+          <small class="error" id="error-usuario" aria-live="polite"></small>
+        </div>
+
+        <div class="campo">
+          <input type="password" id="clave" name="clave" placeholder=" " autocomplete="current-password">
+          <label for="clave">Contraseña</label>
+          <button type="button" id="ver-clave" class="ojo" aria-label="Mostrar u ocultar contraseña">👁️</button>
+          <small class="error" id="error-clave" aria-live="polite"></small>
+        </div>
+
+        <button type="submit" id="btn-ingresar" class="boton">
+          <span class="texto">Ingresar</span>
+          <span class="spinner"></span>
+        </button>
+      </form>
+    </section>
+
+    <!-- Vista de sesión activa -->
+    <section id="vista-sesion" class="tarjeta oculto">
+      <div class="logo">✅</div>
+      <h1>Sesión iniciada</h1>
+      <p class="subtitulo">Hola, <strong id="nombre-usuario"></strong></p>
+
+      <ul class="datos">
+        <li><span>Inicio de sesión</span><strong id="hora-inicio"></strong></li>
+        <li><span>Duración</span><strong>15 minutos</strong></li>
+        <li><span>Almacenamiento</span><strong>sessionStorage</strong></li>
+      </ul>
+
+      <button type="button" id="btn-salir" class="boton secundario">Cerrar sesión</button>
+    </section>
+
+  </main>
+
+  <script src="app.js"></script>
+</body>
+</html>
