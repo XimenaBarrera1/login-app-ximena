@@ -1,0 +1,20 @@
+name: CI basica
+
+on:
+  push:
+    branches: [ main, develop ]
+  pull_request:
+    branches: [ main ]
+
+jobs:
+  verificar:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Descargar el codigo
+        uses: actions/checkout@v4
+
+      - name: Verificar archivos obligatorios
+        run: |
+          test -f index.html
+          test -f README.md
+          echo "Estructura del proyecto correcta"
